@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://kit.fontawesome.com/8a96dcfe6b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/collections.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <title>Shop</title>
+</head>
+<body>
+    <div id="container">
+        <header th:fragment="header">
+            <div class="header-container">
+                <div class="header-flex">
+                    <div class="header-left-container">
+                        <div class="logo-container">
+                            <a href="/">
+                                <img class="site-logo" src="/static/images/logo/site_logo.PNG" alt="site_logo">
+                            </a>
+                        </div>
+                        <div class="menu-container">
+                            <div class="site-nav-menu">
+                                <a href="/collections/all" class="site-nav-parent">SHOP</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right-container">
+                        <button class="site-header-button">SEARCH</button>
+                        <button class="site-header-button">BAG(<span class="bag-count">1</span>)</button>
+                        <button class="site-header-button"><img class="korea-img" src="/static/images/logo/korea_img.PNG" alt="korea"></button>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-invisible">
+                <div class="site-nav-mega">
+                    <a href="/collections/new-arrivals" class="site-nav-child-link">NEW</a>
+                    <a href="/collections/denim" class="site-nav-child-link">DENIM</a>
+                    <a href="/collections/tees" class="site-nav-child-link">TEES</a>
+                    <a href="/collections/sweats" class="site-nav-child-link">SWEATS</a>
+                    <a href="/collections/overdyed" class="site-nav-child-link">OVERDYED</a>
+                    <a href="/collections/pants" class="site-nav-child-link">PANTS</a>
+                    <a href="/collections/shorts" class="site-nav-child-link">SHORTS</a>
+                    <a href="/collections/outerwear" class="site-nav-child-link">OUTERWEAR</a>
+                    <a href="/collections/knits" class="site-nav-child-link">KNITS</a>
+                    <a href="/collections/tops-shirts" class="site-nav-child-link">TOPS & SHIRTS</a>
+                    <a href="/collections/headwear" class="site-nav-child-link">HEADWEAR</a>
+                    <a href="/collections/accessories" class="site-nav-child-link">ACCESSORIES</a>
+                    <a href="/collections/all" class="site-nav-child-link">ALL</a>
+                </div>
+                <div class="site-nav-mega">
+                    <a href="/account/login" class="site-nav-child-link">ACCOUNT</a>
+                    <a href="/pages/customer-support" class="site-nav-child-link">CONTACT</a>
+                    <a href="/blogs/features" class="site-nav-child-link">FEATURES</a>
+                    <a href="/blogs/chapters" class="site-nav-child-link">CHAPTERS</a>
+                </div>
+            </nav>
+            <script src="/static/js/header.js"></script>
+        </header>
+        <main>
+            <ul class="collection-products">                
+            </ul>
+        </main>
+        <footer class="footer-container">
+            <div class="footer-social">
+                <ul>
+                    <li><a href="https://www.instagram.com/stussy/"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/stussy"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/stussy"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://vimeo.com/stussy"><i class="fa-brands fa-vimeo-v"></i></a></li>
+                    <li><a href="https://www.youtube.com/stussyworldwide"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-text">
+                <div class="footer-news">
+                    <a href="#">NEWSLETTER</a>
+                </div>
+                <div class="footer-stussy">
+                    <a href="#">© 2022 STÜSSY</a>
+                </div>
+                <div class="footer-menu">
+                    <ul class="menu-in">
+                        <li><a href="/account/login">ACCOUNT</a></li>
+                        <li><a href="/pages/customer-support">CONTACT</a></li>
+                        <li><a href="/blogs/features">CHAPTERS</a></li>
+                        <li><a href="/blogs/chapters">FEATURES</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="footer-bot">
+                <span>상호: KOREA TRIBE, INC. | 대표: BAIK KYUHEE | 사업자등록번호: 561-87-00715 | 주소: 서울특별시 서초구 서초중앙로 209, 8층(반포동) 통신판매신고번호: 제 2018 - 서울서초 - 0860 호 [사업자정보확인] | 전화: 02-6105-4044 | 문의: INFO@STUSSY.CO.KR INC. | <a href="#">개인정보취급방침</a></span>
+            </div> 
+        </footer>
+    </div>
+    <script src="/static/js/collections.js"></script>
+</body>
+</html>

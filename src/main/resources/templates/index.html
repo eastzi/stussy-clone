@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment/head :: head}"></head>
+<head>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <title>Stussy</title>
+</head>
+<body>
+    <div id="container">
+        <header th:replace="~{fragment/header :: header}"></header>
+        <main class="imgs"> 
+            <article class="main-left">
+                <ul>
+                    <div class="img-box">
+                        <div class="item">
+                            <a href="/collections/new-arrivals"><img src="/static/images/p1.png" alt="new-arrivals" class="new"><span>NEW ARRIVALS</span></a>
+                        </div>
+                    </div>
+                    <div class="img-box">
+                        <div class="item">
+                            <a href="/collections/pants"><img src="/static/images/p2.png" alt="pants" class="new"><span>PANTS</span></a>
+                        </div>
+                    </div>
+                </ul>
+                <ul>
+                    <div class="img-box">
+                        <div class="item">
+                            <a href="/collections/accessories"><img src="/static/images/p4.png" alt="accessories" class="new"><span>ACCESSORY</span></a>
+                        </div>
+                    </div>
+                    <div class="img-box">
+                        <div class="item">
+                            <a href="/collections/headwear"><img src="/static/images/p5.png" alt="headwear" class="new"><span>HEADWEAR</span></a>
+                        </div>
+                    </div>
+                </ul>
+            </article>
+        </main>
+        <footer th:replace="~{fragment/footer :: footer}"></footer>
+    </div>
+</body>
+</html>
