@@ -1,12 +1,14 @@
 package com.stissy.clone.controller.api;
 
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.lang.Nullable;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stissy.clone.aop.annotation.LogAspect;
@@ -30,12 +32,18 @@ public class AccountApi {
 	@LogAspect
 	@ValidAspect
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@Validated(ValidationSequence.class) @RequestBody RegisterReqDto registerReqDto, BindingResult bindingResult) throws Exception {
+	public ResponseEntity<?> register(@Validated(ValidationSequence.class) @RequestBody RegisterReqDto registerReqDto,
+									BindingResult bindingResult) throws Exception {
 		
 		accountService.checkDuplicateEmail(registerReqDto.getEmail());
         accountService.register(registerReqDto);
 
         return ResponseEntity.ok().body(new CMRespDto<>(1, "Successfully registered", registerReqDto));
 	}
- 
+	
+	@GetMapping("/userList")
+	public ResponseEntity<?> getUserList(@RequestParam int pageNumber, @RequestParam @Nullable String searchText) throws Exception {
+		
+		return ResponseEntity.ok(new CMRespDto<>(1, "success", accountService.getUserList(pageNumber, searchText)));
+	}
 }

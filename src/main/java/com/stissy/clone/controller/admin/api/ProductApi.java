@@ -40,7 +40,9 @@ public class ProductApi {
 	}
 	
 	@GetMapping("/products")
-	public ResponseEntity<?> getProductList(@RequestParam int page, @RequestParam @Nullable String category, @RequestParam @Nullable String searchValue) throws Exception {
+	public ResponseEntity<?> getProductList(@RequestParam int page, 
+											@RequestParam @Nullable String category, 
+											@RequestParam @Nullable String searchValue) throws Exception {
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "GetSuccessfully", productService.getProductList(page, category, searchValue)));
 	}
@@ -48,7 +50,8 @@ public class ProductApi {
 	@LogAspect
 	@ValidAspect
 	@PostMapping("/product/modification")
-	public ResponseEntity<?> updateProduct(@Valid ProductModificationReqDto productModificationReqDto, BindingResult bindingResult) throws Exception {
+	public ResponseEntity<?> updateProduct(@Valid ProductModificationReqDto productModificationReqDto, 
+											BindingResult bindingResult) throws Exception {
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "UpdateSuccessfully", productService.updateProduct(productModificationReqDto)));
 	}

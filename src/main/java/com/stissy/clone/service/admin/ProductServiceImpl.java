@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.stissy.clone.Repository.ProductRepository;
-import com.stissy.clone.aop.annotation.LogAspect;
 import com.stissy.clone.domain.Product;
 import com.stissy.clone.domain.ProductImgFile;
 import com.stissy.clone.dto.admin.ProductAdditionReqDto;

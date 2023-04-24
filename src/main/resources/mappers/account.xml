@@ -19,6 +19,7 @@
         <result property="role_id" column="role_id"></result>
         <result property="create_date" column="create_date"></result>
         <result property="update_date" column="update_date"></result>
+        <result property="user_total_count" column="user_total_count"></result>
         <collection property="role" resultMap="role"></collection>
     </resultMap>
 
@@ -59,6 +60,36 @@
             left outer join role_mst rm on (rm.id = um.role_id)
         where
             email = #{email}
+    </select>
+    
+    <select id="getUserList" parameterType="java.util.HashMap" resultMap="user">
+    	SELECT
+    		um.id,
+    		um.name,
+    		um.email,
+    		um.create_date,
+    		uc.user_total_count
+    	FROM
+    		(SELECT
+    			*
+    		FROM
+    			user_mst
+    		WHERE
+    			1 = 1
+			<if test='searchText != null || searchText != ""'>
+				AND email like CONCAT('%', #{searchText}, '%')
+			</if>
+			LIMIT #{index}, 10) um
+			LEFT OUTER JOIN(select
+								count(*) as user_total_count
+							from
+								user_mst
+							where
+								1 = 1
+								<if test='searchText != null || searchText != ""'>
+									AND email like CONCAT('%', #{searchText}, '%')
+								</if>
+							) uc on (1 = 1)
     </select>
 
 </mapper>

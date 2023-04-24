@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment/head :: head}"></head>
+<head>
+    <link rel="stylesheet" href="/static/css/aside.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <link rel="stylesheet" href="/static/css/user_list.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div id="container">
+        <header th:replace="~{fragment/header :: header}"></header>
+        <main>
+            <div class="user">
+                <h1 class="list-title">USER LIST</h1>
+                <div class="user-container">
+                    <section class="user-list-main">
+                        <div class="user-list-header">
+                            <div class="user-search">
+                                <input type="text" class="user-input" placeholder="아이디">
+                                <button type="button" class="search-button black-button">검색</button>
+                            </div>
+                        </div>
+                        <ul class="page-buttons">
+                            
+                        </ul>
+                        <table class="product-list">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>이름</th>
+                                    <th>아이디(이메일)</th>
+                                    <th>가입일</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-body">
+                                
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </div>
+    <script src="/static/js/user_list.js"></script>
+</body>
+</html>

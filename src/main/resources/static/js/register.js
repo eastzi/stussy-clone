@@ -1,4 +1,4 @@
-const registerBuuton = document.querySelector(".login-button");
+const registerButton = document.querySelector(".login-button");
 const registerInputs = document.querySelectorAll(".login-input");
 
 for(let i = 0; i < registerInputs.length; i++) {
@@ -7,13 +7,13 @@ for(let i = 0; i < registerInputs.length; i++) {
             if(i != 3) {
                 registerInputs[i + 1].focus();
             }else {
-                registerBuuton.click();
+                registerButton.click();
             }
         }
     }
 }
 
-registerBuuton.onclick = () => {
+registerButton.onclick = () => {
 
     let registerInfo = { //object, JSON.stringify(객체)를 통해 object->JSON문자열로 변환
         lastName: registerInputs[0].value,

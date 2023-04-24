@@ -10,7 +10,6 @@ import com.stissy.clone.domain.ProductImgFile;
 
 @Mapper
 public interface ProductRepository {
-
 	public int saveProduct(Product product) throws Exception;
 	public int saveImgFiles(List<ProductImgFile> product_img_files) throws Exception;
 	public List<Product> getProductList(Map<String, Object> map) throws Exception;

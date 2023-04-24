@@ -109,6 +109,23 @@ textarea {
     align-items: center;
 }
 
+.user-list-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 400px;
+}
+
+.user-search input, button {
+    margin: 0px 0px 15px 10px;
+    padding: 10px;
+}
+
 .category-select {
     width: 200px;
 }
@@ -224,5 +241,4 @@ th:nth-child(8) {
     margin: 0px;
     padding: 15px;
     width: 100%;
-
 }
